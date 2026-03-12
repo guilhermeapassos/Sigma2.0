@@ -1,4 +1,4 @@
-# Aprendizado por Projeto Integrado (API) - Template
+# API - Sigma 2.0
 
 Template para os projetos de API, ensinando na utilização do repositório digital "GitHub". 
 
