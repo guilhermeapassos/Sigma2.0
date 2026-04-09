@@ -53,6 +53,8 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
 
 # Product Backlog
 
+<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/backlog%20jira%20signa2.jpg" width="500"/>
+
 | Rank | Prioridade | User Story                                                                                                                                              | Estimativa | Sprint |
 |------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
 | 1    | Alta       | Como síndico, quero abrir solicitações de vistoria predial para atender à legislação de meu município                                                    | 5          | 1      |
