@@ -1,8 +1,8 @@
 # API - Sigma 2.0
 
-Template para os projetos de API, ensinando na utilização do repositório digital "GitHub". 
+Projeto de API da Equipe Sigma, matéria de T.I. Aplicada à Gestão de Operações e Processos, projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados dos estudantes envolvidos
 
-Projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados dos estudantes envolvidos
+![Descrição da imagem](link-da-imagem)
 
 # Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
