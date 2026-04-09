@@ -17,6 +17,8 @@ Projeto pedagógico alicerçado na Metodologia API para ensino-aprendizado focad
 Uso de estratégias para entender o problema, conceber uma solução viável ao desenvolver e implementar o MVP seguido de sua operação (CDIO). 
 Os resultados dos projetos devem obedecer ao Aviso Legal disponível no site da Fatec SJC com definição das datas do kickoff e das sprint
 
+Este projeto está sendo desenvolvido como parte de um trabalho acadêmico, com foco na construção de uma API. Para a organização e acompanhamento do desenvolvimento, a equipe está utilizando o [JIRA](https://sigma222.atlassian.net/jira/software/projects/SCRUM/summary?atlOrigin=eyJpIjoiNDkzZWQwNDQyNzk3NGRlZjgxZGZlYzJkNWE1MzQxZjkiLCJwIjoiaiJ9) como plataforma de gerenciamento de tarefas, estruturando o fluxo de trabalho em sprints. Dessa forma, conseguimos planejar, distribuir e monitorar as atividades de forma mais eficiente, seguindo práticas ágeis.
+
 # Equipe
 |    Função     | Nome                                  |                                                                                                                                                      LinkedIn & GitHub                                                                                                                                                      |
 | :-----------: | :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
