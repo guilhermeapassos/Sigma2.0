@@ -2,7 +2,7 @@
 
 Projeto de API da Equipe Sigma, matéria de T.I. Aplicada à Gestão de Operações e Processos, projeto baseado na metodologia ágil SCRUM, procurando desenvolver a Proatividade, Autonomia, Colaboração e Entrega de Resultados dos estudantes envolvidos
 
-![Descrição da imagem](link-da-imagem)
+(https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/LOGO_SIGMA.jpg))
 
 # Índice
 * [Objetivo do Projeto](#objetivo-do-projeto)
