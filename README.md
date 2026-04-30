@@ -57,16 +57,13 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
 
 | Rank | Prioridade | User Story                                                                                                                                              | Estimativa | Sprint |
 |------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
-| 1    | Alta       | Como Scrum Masters gostaria de entregas mais rápidas do grupo                                                                                           | 5          | 1      |
-| 2    | Alta       | Espectativas altas para a entrega da análise de dados por conta do PO                                                                                   | 8          | 2      |
-| 3    | Média      | Grupo estar mais apto a manejar o Jira conforme as entregas forem acontecendo                                                                           | 5          | 2      |
-| 4    | Baixa      | Organizar os documentos dentro dos diretórios                                                                                                           | 2          | 3      |
+| 1    | Alta       | Porque foi escolhido "Outras miudezas comestíveis de bovino, congeladas"                                                                                | 5          | 1      |
+| 2    | Alta       | Quais os países que mais compram                                                                                                                        | 8          | 2      |
+| 3    | Média      | quais os estados que mais exportam                                                                                                                      | 5          | 2      |
+| 4    | Baixa      | quais os principais centro de escoamento do produto                                                                                                     | 2          | 3      |
+| 4    | Baixa      | quais países são mais estratégicos para o brasil e quais os riscos existem em caso de dependência excessiva                                             | 2          | 3      |
 
-
-
-
-
-  
+ 
 # Registro das Sprints
 
 | Sprint            | Previsão   | Status   | Histórico |
