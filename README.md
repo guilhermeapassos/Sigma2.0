@@ -66,6 +66,21 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
  
 # Registro das Sprints
 
+| Fase | Data |
+|---|---|
+| Início das aulas | 09/02 |
+| Kick-off geral | 02/03 a 06/03 |
+| Construção do backlog de produto / Planning | 09/03 a 13/03 |
+| Sprint 1 | 16/03 a 05/04 |
+| Sprint Review / Planning | 06/04 a 10/04 |
+| Sprint 2 | 13/04 a 03/05 |
+| Sprint Review / Planning | 04/05 a 08/05 |
+| Sprint 3 | 11/05 a 31/05 |
+| Sprint Review | 01/06 a 05/06 |
+| Apresentação de TGs | 15/06 a 17/06 |
+| Feira de Soluções | 18/06 |
+| Encerramento das aulas | 04/07 |
+
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
 | 01                | 08/04/2026 |   feito  | [MVP](MVP/sp1.md)  |
