@@ -63,4 +63,6 @@
 
 ## 📂 Anexos / Evidências
 - Prints de tela  
-<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/3%20meses4.jpg" width="500"/>  
+<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/3%20meses4.jpg" width="500"/>
+
+Link para o Dashboard: https://bovine-trade-pulse.base44.app/
