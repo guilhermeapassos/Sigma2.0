@@ -1,65 +1,62 @@
-# 📌 MVP - [Nome do Projeto]
+# 📌 MVP - [Sigma2.0]
 
 ## 🎯 Objetivo do MVP
-> Descrever de forma clara qual é o propósito do MVP:  
-- Qual problema resolve?  
-- Qual hipótese será validada?  
-- Qual valor será entregue ao usuário final?  
+> O objetivo da primeira sprint consiste em definir qual base de dados do governo iremos estudar, tratar e analisar. Depois disso discutir qual o melhor dado de exportação a analisar.
+- Nessa sprint o time deve:
+- começar a organizar as ferramentas que iremos usar, como o próprio github, jira entre outros
+- Definir qual o papel de cada membro da equipe
+- Definir prazos para as entregas internas   
 
 ---
 
 ## 📝 Descrição da Solução
 > Breve explicação do que será desenvolvido e entregue nesta etapa.  
-- Funcionalidades principais incluídas  
-- Limitações conhecidas  
+- Funcionalidades principais incluídas:
+- top países onde as miudezas comestíveis de bovino são exportadas
+- quantidade em peso para cada país
+- valor exportado
+- Limitações conhecidas:
+- Análise por enquanto de somente dos 3 primeiros meses do ano de 2026
 - Escopo reduzido (somente o essencial para validar a ideia)  
-
----
-
-## 👥 Personas / Usuários-Alvo
-- **Persona 1:** breve descrição, necessidades e dores atendidas  
-- **Persona 2:** breve descrição, necessidades e dores atendidas  
 
 ---
 
 ## 🔑 User Stories (Backlog do MVP)
 | ID  | User Story                                                                 | Prioridade | Estimativa |
 |-----|-----------------------------------------------------------------------------|------------|------------|
-| US1 | Como [tipo de usuário], quero [objetivo] para [benefício esperado].         | Alta       | 5 pontos   |
-| US2 | Como [tipo de usuário], quero [objetivo] para [benefício esperado].         | Média      | 3 pontos   |
+| US1 | Como aluno de gestão, eu quero visualizar a quantidade exportada de miudezas comestíveis de bovino por país, para identificar os principais destinos das exportações brasileiras.   | Alta       | 5 pontos   |
+| US2 | Como aluno de gestão, eu quero visualizar o valor das exportações por país, para comparar a relevância financeira de cada mercado..                                                 | Média      | 3 pontos   |
 
 ---
 
 ## 📅 Sprint(s) Relacionadas
 | Sprint | Entregas Principais                          | Status   |
 |--------|----------------------------------------------|----------|
-| 01     | [Funcionalidade X, Y]                        | Concluído|
-| 02     | [Funcionalidade Z]                           | Em andamento |
+| 01     | dashboard de top países onde as miudezas comestíveis de bovino são exportadas                        | Concluído|
+| 01     | quantidade em peso para cada país                           | Concluído |
 
 ---
 
 ## 📊 Critérios de Aceitação
-- O MVP deve permitir que o usuário [ação principal]  
-- O sistema deve registrar [evento importante]  
-- Métricas coletadas: [exemplo: tempo de resposta, taxa de uso]  
+- O professor deve conseguir enxergar facilmente no dashboard o objetivo da sprint 1  
+- O dashboard deve funcionar com todas as interações propostas   
 
 ---
 
 ## 📈 Métricas de Validação
-- Número de usuários que testaram o MVP  
-- Feedback qualitativo (positivo/negativo)  
-- Indicadores de negócio (exemplo: % de adesão, redução de custo, etc.)  
+- Testes funcionais realizados pela equipe  
+- Usabilidade e legibilidade por terceiros  
+- Validação do professor  
 
 ---
 
 ## 🚀 Próximos Passos
-- Melhorias planejadas após feedback  
+- Adicionar ao dashboard quais estados mais exportam
+- Adicionar ao dashboard quais os principais centros de escoamentos para essa carga
 - Ajustes de usabilidade  
 - Expansão de funcionalidades para próximo incremento  
 
 ---
 
 ## 📂 Anexos / Evidências
-- Prints de tela  
-- Fluxos ou protótipos  
-- Vídeo (MVP)  
+<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/top%20paises1.jpg" width="500"/>  
