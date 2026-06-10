@@ -55,6 +55,10 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
 
 <img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/backlog%20jira%20signa2.jpg" width="500"/>
 
+<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/relatorio%20jira1.jpg" width="500"/>
+
+<img src="https://github.com/guilhermeapassos/Sigma2.0/blob/main/Docs/relatorio%20jira2.jpg" width="500"/>
+
 | Rank | Prioridade | User Story                                                                                                                                              | Estimativa | Sprint |
 |------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
 | 1    | Alta       | Porque foi escolhido "Outras miudezas comestíveis de bovino, congeladas"                                                                                | 5          | 1      |
