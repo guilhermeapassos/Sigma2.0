@@ -60,8 +60,9 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
 | 1    | Alta       | Porque foi escolhido "Outras miudezas comestíveis de bovino, congeladas"                                                                                | 5          | 1      |
 | 2    | Alta       | Quais os países que mais compram                                                                                                                        | 8          | 2      |
 | 3    | Média      | quais os estados que mais exportam                                                                                                                      | 5          | 2      |
-| 4    | Baixa      | quais os principais centro de escoamento do produto                                                                                                     | 2          | 3      |
-| 4    | Baixa      | quais países são mais estratégicos para o brasil e quais os riscos existem em caso de dependência excessiva                                             | 2          | 3      |
+| 4    | Baixa      | quais os principais centro de escoamento do produto                                                                                                     | 2          | 2      |
+| 4    | Alta       | quais países são mais estratégicos para o brasil e quais os riscos existem em caso de dependência excessiva                                             | 3          | 3      |
+| 4    | Alta       | Detalhar e Comparar os primeiros meses de 3 anos atrás com o ano de 2026                                                                                | 3          | 3      |
 
  
 # Registro das Sprints
@@ -76,15 +77,15 @@ Este projeto tem como objetivo ajudar e facilitar na utilização da plataforma 
 | Sprint 2 | 13/04 a 03/05 |
 | Sprint Review / Planning | 04/05 a 08/05 |
 | Sprint 3 | 11/05 a 31/05 |
-| Sprint Review | 01/06 a 05/06 |
+| Sprint Review | 01/06 a 10/06 |
 | Apresentação de TGs | 15/06 a 17/06 |
-| Feira de Soluções | 18/06 |
+| Feira de Soluções | 25/06 |
 | Encerramento das aulas | 04/07 |
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
 | 01                | 08/04/2026 |   feito  | [MVP](MVP/sp1.md)  |
-| 02                | 06/05/2026 | a fazer  | [MVP](MVP/sp2.md)  |
-| 03                | dd/mm/aaaa | a fazer  | [MVP](MVP/sp3.md)  |
-| Feira de Soluções | dd/mm/aaaa | a fazer  | [MVP](#)  |
+| 02                | 06/05/2026 |   feito  | [MVP](MVP/sp2.md)  |
+| 03                | 10/06/2026 |   feito  | [MVP](MVP/sp3.md)  |
+| Feira de Soluções | 25/06/2026 |    N/A   | [MVP](#)  |
 
