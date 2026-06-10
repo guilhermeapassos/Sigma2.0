@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>Dashboard — Exportações Miudezas Bovinas NCM 2062990</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600&display=swap');
+:root{
+  --wine:#6B1B2A;--wine2:#8B2A3E;--wine3:#C4556A;--wine-pale:#F5E8EA;--wine-border:#DDB5BC;
+  --ink:#1C1C1E;--ink2:#3A3A3C;--gray:#6E6E73;--gray-lt:#AEAEB2;
+  --surface:#F4F4F6;--card:#FFFFFF;--border:#DEDDE3;
+  --green:#1F7A3F;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--surface)}
+.db{
+  font-family:'Inter',sans-serif;
+  font-size:14px;
+  color:var(--ink);
+  width:1920px;
+  padding:36px 48px 56px;
+  background:var(--surface);
+}
+
+/* HERO */
+.hero{
+  background:var(--ink);
+  border-radius:16px;
+  padding:28px 40px;
+  margin-bottom:28px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.hero-icon{
+  width:52px;height:52px;border-radius:12px;background:var(--wine);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.h-title{font-size:20px;font-weight:600;color:#fff;letter-spacing:-.02em;line-height:1.3}
+.h-sub{font-size:13px;color:var(--gray-lt);margin-top:5px;font-weight:300;letter-spacing:.01em}
+.badge{
+  font-size:13px;font-weight:500;padding:7px 18px;border-radius:24px;
+  background:var(--wine);color:#fff;letter-spacing:.02em;white-space:nowrap;
+}
+.yr-lbl{font-size:11px;color:var(--gray-lt);font-weight:300;letter-spacing:.07em;text-transform:uppercase;margin-right:6px}
+.ybtn{
+  font-size:13px;font-weight:500;padding:7px 18px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--gray-lt);
+  cursor:pointer;transition:all .18s;letter-spacing:.01em;
+}
+.ybtn.on{background:var(--wine);color:#fff;border-color:var(--wine)}
+
+/* KPI STRIP */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.kpi{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:24px 28px;display:flex;align-items:stretch;gap:16px;
+  transition:border-color .2s;
+}
+.kpi:hover{border-color:var(--wine3)}
+.kpi-bar{width:4px;border-radius:3px;flex-shrink:0;min-height:48px}
+.kpi-eyebrow{font-size:11px;font-weight:500;color:var(--gray-lt);letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px}
+.kpi-val{font-size:32px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.kpi-delta{font-size:13px;margin-top:8px;display:flex;align-items:center;gap:4px;color:var(--gray)}
+.up{color:var(--green)}.dn{color:var(--wine)}
+
+/* SECTION LABEL */
+.sec{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-lt);margin-bottom:14px}
+
+/* CARDS */
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px 28px}
+.ct{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin-bottom:4px}
+.cs{font-size:12px;font-weight:300;color:var(--gray)}
+.ch{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+
+/* LEGEND */
+.leg{display:flex;gap:18px;margin-bottom:14px}
+.leg span{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;transition:opacity .2s}
+.leg span.off{opacity:.28}
+.dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;display:inline-block}
+
+/* TABS */
+.tabs{display:flex;gap:6px}
+.tbtn{
+  font-size:13px;font-weight:500;padding:6px 16px;border-radius:8px;
+  border:1px solid var(--border);background:transparent;color:var(--gray);
+  cursor:pointer;transition:all .18s;
+}
+.tbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* LAYOUTS */
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.row3{display:grid;grid-template-columns:3fr 2fr;gap:16px;margin-bottom:16px}
+
+/* COUNTRY BARS */
+.cbr{display:flex;align-items:center;gap:10px;margin-bottom:8px;cursor:pointer;border-radius:8px;padding:5px 8px;transition:background .15s}
+.cbr:hover{background:var(--surface)}
+.cbn{font-size:13px;min-width:130px;color:var(--ink);font-weight:400}
+.cbt{flex:1;background:var(--surface);border-radius:4px;height:8px;overflow:hidden}
+.cbf{height:8px;border-radius:4px;transition:width .4s}
+.cbv{font-size:13px;color:var(--gray);min-width:64px;text-align:right;font-weight:500}
+
+.sort-sel{
+  font-size:13px;border:1px solid var(--border);border-radius:8px;
+  padding:6px 10px;background:var(--card);color:var(--ink);
+  cursor:pointer;font-family:inherit;font-weight:400;
+}
+
+/* COUNTRY DETAIL */
+.cdet{display:none;border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-top:14px;background:var(--surface)}
+.cdet-t{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.cdet-r{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--border)}
+.cdet-r:last-child{border:none;font-weight:600;margin-top:4px;padding-top:10px}
+.cdet-l{color:var(--gray)}.cdet-v{color:var(--ink);font-weight:500}
+
+/* INSIGHTS */
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ins{border-radius:12px;padding:22px 24px}
+.ins-t{font-size:13px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ins-b{font-size:13px;line-height:1.65;font-weight:300}
+.ins.wine{background:var(--wine-pale);border:1px solid var(--wine-border)}
+.ins.wine .ins-t{color:var(--wine)}.ins.wine .ins-b{color:var(--wine2)}
+.ins.dark{background:var(--surface);border:1px solid var(--border)}
+.ins.dark .ins-t{color:var(--ink)}.ins.dark .ins-b{color:var(--ink2)}
+
+.divider{height:1px;background:var(--border);margin:28px 0}
+</style>
+</head>
+<body>
+<div class="db">
+
+<!-- HERO -->
+<div class="hero">
+  <div style="display:flex;align-items:center;gap:18px">
+    <div class="hero-icon"><i class="ti ti-meat" style="font-size:26px;color:#fff" aria-hidden="true"></i></div>
+    <div>
+      <div class="h-title">Exportações — miudezas comestíveis de bovino, congeladas</div>
+      <div class="h-sub">NCM 2062990 &nbsp;·&nbsp; Janeiro a março de 2024, 2025 e 2026 &nbsp;·&nbsp; Fonte: MDIC / Secex</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <span class="badge"><i class="ti ti-trending-up" style="vertical-align:-2px;margin-right:5px" aria-hidden="true"></i>+38% em 2 anos</span>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="yr-lbl">Ano</span>
+      <button class="ybtn on" onclick="setYear(2024,this)">2024</button>
+      <button class="ybtn on" onclick="setYear(2025,this)">2025</button>
+      <button class="ybtn on" onclick="setYear(2026,this)">2026</button>
+    </div>
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="kpi-row">
+  <div class="kpi">
+    <div class="kpi-bar" style="background:var(--wine)"></div>
+    <div>
+      <div class="kpi-eyebrow">Receita FOB total</div>
+      <div class="kpi-val" id="kT">US$ 222M</div>
+      <div class="kpi-delta" id="kTS">3 anos acumulado</div>
+    </div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-bar" style="background:var(--green)"></div>
+    <div>
+      <div class="kpi-eyebrow">Crescimento</div>
+      <div class="kpi-val up" id="kG">+38,4%</div>
+      <div class="kpi-delta up" id="kGS"><i class="ti ti-arrow-up" style="font-size:12px" aria-hidden="true"></i>2024 → 2026</div>
+    </div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-bar" style="background:var(--gray-lt)"></div>
+    <div>
+      <div class="kpi-eyebrow">Preço médio / kg</div>
+      <div class="kpi-val" id="kP">US$ 1,75–2,17</div>
+      <div class="kpi-delta up" id="kPS"><i class="ti ti-arrow-up" style="font-size:12px" aria-hidden="true"></i>+23% no período</div>
+    </div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-bar" style="background:var(--border)"></div>
+    <div>
+      <div class="kpi-eyebrow">Operações registradas</div>
+      <div class="kpi-val" id="kO">3.099</div>
+      <div class="kpi-delta" id="kOS">todas as exportações</div>
+    </div>
+  </div>
+</div>
+
+<!-- RECEITA + PREÇO -->
+<div class="sec">Receita e preço mensal</div>
+<div class="row2">
+  <div class="card">
+    <div class="ch">
+      <div><div class="ct">Receita FOB mensal</div><div class="cs">Clique na legenda para ocultar ou exibir anos</div></div>
+    </div>
+    <div class="leg">
+      <span onclick="tgY('m',2024,this)"><span class="dot" style="background:#6B1B2A"></span>2024</span>
+      <span onclick="tgY('m',2025,this)"><span class="dot" style="background:#AEAEB2"></span>2025</span>
+      <span onclick="tgY('m',2026,this)"><span class="dot" style="background:#1C1C1E"></span>2026</span>
+    </div>
+    <div style="position:relative;width:100%;height:280px">
+      <canvas id="cM" role="img" aria-label="Receita FOB mensal Jan–Mar 2024, 2025 e 2026">Receita mensal por ano.</canvas>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ch">
+      <div><div class="ct">Preço médio por kg (US$/kg)</div><div class="cs">Clique na legenda para comparar anos</div></div>
+    </div>
+    <div class="leg">
+      <span onclick="tgY('p',2024,this)"><span class="dot" style="background:#6B1B2A;border-radius:50%"></span>2024</span>
+      <span onclick="tgY('p',2025,this)"><span class="dot" style="background:#AEAEB2;border-radius:50%"></span>2025</span>
+      <span onclick="tgY('p',2026,this)"><span class="dot" style="background:#1C1C1E;border-radius:50%"></span>2026</span>
+    </div>
+    <div style="position:relative;width:100%;height:280px">
+      <canvas id="cP" role="img" aria-label="Preço médio por kg em USD Jan–Mar 2024, 2025 e 2026">Preço por kg por ano.</canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ESTADOS -->
+<div class="sec">Produção por estado</div>
+<div class="card" style="margin-bottom:16px">
+  <div class="ch">
+    <div><div class="ct">Exportação por estado produtor</div><div class="cs">Evolução Jan–Mar — passe o mouse para detalhes</div></div>
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="leg" style="margin-bottom:0">
+        <span><span class="dot" style="background:#6B1B2A"></span>2024</span>
+        <span><span class="dot" style="background:#AEAEB2"></span>2025</span>
+        <span><span class="dot" style="background:#1C1C1E"></span>2026</span>
+      </div>
+      <div class="tabs">
+        <button class="tbtn on" onclick="swSt('fob',this)">Receita FOB</button>
+        <button class="tbtn" onclick="swSt('kg',this)">Volume kg</button>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;width:100%;height:320px">
+    <canvas id="cSt" role="img" aria-label="Exportação por estado produtor 2024, 2025 e 2026">Exportação por estado.</canvas>
+  </div>
+</div>
+
+<!-- PAÍSES + CRESCIMENTO -->
+<div class="sec">Destinos de exportação</div>
+<div class="row3">
+  <div class="card">
+    <div class="ch">
+      <div><div class="ct">Top 15 países compradores</div><div class="cs">Clique em um país para ver detalhamento por ano</div></div>
+      <select class="sort-sel" onchange="sortC(this.value)" aria-label="Ordenar países">
+        <option value="total">Ordenar: total</option>
+        <option value="2024">Ordenar: 2024</option>
+        <option value="2025">Ordenar: 2025</option>
+        <option value="2026">Ordenar: 2026</option>
+      </select>
+    </div>
+    <div id="cList"></div>
+    <div class="cdet" id="cDet"></div>
+  </div>
+  <div class="card">
+    <div class="ch">
+      <div><div class="ct">Crescimento por destino</div><div class="cs">Variação % da receita FOB entre 2024 e 2026</div></div>
+    </div>
+    <div style="position:relative;width:100%;height:400px">
+      <canvas id="cGr" role="img" aria-label="Crescimento percentual da receita por país entre 2024 e 2026">Crescimento por país.</canvas>
+    </div>
+  </div>
+</div>
+
+<!-- INSIGHTS -->
+<div class="divider"></div>
+<div class="sec">Insights estratégicos</div>
+<div class="ins-grid">
+  <div class="ins wine">
+    <div class="ins-t"><i class="ti ti-trending-up" style="font-size:16px" aria-hidden="true"></i>Valorização de preço</div>
+    <div class="ins-b">O preço/kg subiu de US$1,75 para US$2,15 em 2 anos (+23%), reflexo da forte demanda asiática e africana por proteína bovina brasileira.</div>
+  </div>
+  <div class="ins dark">
+    <div class="ins-t"><i class="ti ti-map-pin" style="font-size:16px" aria-hidden="true"></i>SP lidera, MT acelera</div>
+    <div class="ins-b">São Paulo domina em receita acumulada (US$62M). Mato Grosso cresce +81% em 2 anos, com expansão do abate no Centro-Oeste.</div>
+  </div>
+  <div class="ins wine">
+    <div class="ins-t"><i class="ti ti-world" style="font-size:16px" aria-hidden="true"></i>Hong Kong: hub de risco</div>
+    <div class="ins-b">Hong Kong concentra ~48% da receita total (US$106M) como hub de redistribuição para a China. Alta concentração geopolítica.</div>
+  </div>
+  <div class="ins dark">
+    <div class="ins-t"><i class="ti ti-chart-area" style="font-size:16px" aria-hidden="true"></i>África Ocidental emergente</div>
+    <div class="ins-b">Costa do Marfim e Gana crescem +94% e +66%. O Brasil ganha fatia crescente em mercados africanos com alta demanda por miudezas.</div>
+  </div>
+  <div class="ins wine">
+    <div class="ins-t"><i class="ti ti-calendar" style="font-size:16px" aria-hidden="true"></i>Março como mês-pico</div>
+    <div class="ins-b">Março é o melhor mês nos 3 anos: US$18M (2024), US$26,7M (2025) e US$31,9M (2026). Sazonalidade ligada ao abate e à demanda asiática.</div>
+  </div>
+  <div class="ins dark">
+    <div class="ins-t"><i class="ti ti-rocket" style="font-size:16px" aria-hidden="true"></i>Vietnã: +2.992% em 2 anos</div>
+    <div class="ins-b">De US$161K para US$4,96M entre 2024 e 2026. Nova fronteira de mercado no Sudeste Asiático para miudezas bovinas brasileiras.</div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+Chart.defaults.font.family="'Inter',sans-serif";
+const WINE='#6B1B2A',GRAY='#AEAEB2',INK='#1C1C1E',GC='rgba(0,0,0,.05)',TC='#6E6E73';
+const TT={backgroundColor:INK,titleColor:'#F2F2F7',bodyColor:'#AEAEB2',borderColor:'rgba(255,255,255,.08)',borderWidth:1,padding:14,cornerRadius:8,titleFont:{size:13,weight:'600'},bodyFont:{size:13}};
+const fM=v=>'US$'+(v/1e6).toFixed(1)+'M';
+const fK=v=>(v/1e3).toFixed(0)+'k kg';
+const fP=v=>'US$'+Number(v).toFixed(2);
+const SC={x:{ticks:{color:TC,font:{size:13}},grid:{color:GC},border:{color:GC}},y:{ticks:{color:TC,font:{size:12}},grid:{color:GC},border:{color:GC}}};
+
+const YD={2024:{fob:61480187,kg:34991983,ops:869,pr:'US$ 1,71–1,81'},2025:{fob:75692793,kg:38206180,ops:1034,pr:'US$ 1,92–2,03'},2026:{fob:85111879,kg:39646986,ops:1196,pr:'US$ 2,11–2,17'}};
+let AY=new Set([2024,2025,2026]);
+
+function updKPI(){
+  const yrs=[...AY].sort();
+  if(!yrs.length)return;
+  const tot=yrs.reduce((s,y)=>s+YD[y].fob,0);
+  const ops=yrs.reduce((s,y)=>s+YD[y].ops,0);
+  document.getElementById('kT').textContent='US$ '+(tot/1e6).toFixed(0)+'M';
+  document.getElementById('kO').textContent=ops.toLocaleString('pt-BR');
+  if(yrs.length===1){
+    const y=yrs[0];
+    document.getElementById('kG').textContent=String(y);document.getElementById('kG').className='kpi-val';
+    document.getElementById('kGS').innerHTML='<span style="color:var(--gray)">ano selecionado</span>';
+    document.getElementById('kP').textContent=YD[y].pr;
+    document.getElementById('kPS').innerHTML='<span style="color:var(--gray)">intervalo jan–mar</span>';
+    document.getElementById('kTS').textContent=String(y);
+    document.getElementById('kOS').textContent=String(y);
+  } else {
+    const f=YD[yrs[0]].fob,l=YD[yrs[yrs.length-1]].fob;
+    const p=((l-f)/f*100).toFixed(1);
+    document.getElementById('kG').className='kpi-val '+(+p>=0?'up':'dn');
+    document.getElementById('kG').textContent=(+p>=0?'+':'')+p.replace('.',',')+'%';
+    document.getElementById('kGS').innerHTML='<i class="ti ti-arrow-up" style="font-size:12px" aria-hidden="true"></i>'+yrs[0]+' → '+yrs[yrs.length-1];
+    document.getElementById('kGS').className='kpi-delta '+(+p>=0?'up':'dn');
+    document.getElementById('kP').textContent='US$ 1,71–2,17';
+    document.getElementById('kPS').innerHTML='<i class="ti ti-arrow-up" style="font-size:12px" aria-hidden="true"></i>+23% no período';
+    document.getElementById('kPS').className='kpi-delta up';
+    document.getElementById('kTS').textContent=yrs.length===3?'3 anos acumulado':yrs.join(', ');
+    document.getElementById('kOS').textContent='total no período';
+  }
+}
+
+function setYear(y,btn){
+  if(AY.has(y)){if(AY.size===1)return;AY.delete(y);btn.classList.remove('on');}
+  else{AY.add(y);btn.classList.add('on');}
+  updKPI();rfM();rfP();rfSt(curSt);sortC(document.querySelector('.sort-sel').value);
+}
+
+const VM=new Set([2024,2025,2026]),VP=new Set([2024,2025,2026]);
+const MD=[{l:'2024',d:[20460958,22982307,18036922],c:WINE,y:2024},{l:'2025',d:[24311722,24682945,26698126],c:GRAY,y:2025},{l:'2026',d:[26132565,27075270,31904044],c:INK,y:2026}];
+let mC,pC;
+
+function bldM(){
+  mC=new Chart(document.getElementById('cM'),{type:'bar',data:{labels:['Janeiro','Fevereiro','Março'],datasets:MD.map(d=>({label:d.l,data:d.d,backgroundColor:d.c,borderRadius:6}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>' '+fM(c.raw)}}},scales:{x:{...SC.x,ticks:{color:TC,font:{size:14},autoSkip:false}},y:{...SC.y,ticks:{color:TC,font:{size:13},callback:fM}}}}});
+}
+function rfM(){mC.data.datasets.forEach(ds=>{const y=parseInt(ds.label);ds.hidden=!AY.has(y)||!VM.has(y);});mC.update();}
+
+const PD=[{l:'2024',d:[1.74,1.81,1.71],c:WINE,y:2024,bd:[6,3]},{l:'2025',d:[2.01,2.03,1.92],c:GRAY,y:2025,bd:[4,4]},{l:'2026',d:[2.17,2.17,2.11],c:INK,y:2026,bd:[]}];
+function bldP(){
+  pC=new Chart(document.getElementById('cP'),{type:'line',data:{labels:['Jan','Fev','Mar'],datasets:PD.map(d=>({label:d.l,data:d.d,borderColor:d.c,tension:.4,pointRadius:7,pointHoverRadius:9,pointBackgroundColor:d.c,fill:false,borderDash:d.bd,borderWidth:2.5}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>' '+fP(c.raw)}}},scales:{x:{...SC.x,ticks:{color:TC,font:{size:14},autoSkip:false}},y:{...SC.y,ticks:{color:TC,font:{size:13},callback:fP},min:1.5,max:2.4}}}});
+}
+function rfP(){pC.data.datasets.forEach(ds=>{const y=parseInt(ds.label);ds.hidden=!AY.has(y)||!VP.has(y);});pC.update();}
+
+function tgY(ch,year,el){
+  el.classList.toggle('off');
+  if(ch==='m'){VM.has(year)?VM.delete(year):VM.add(year);rfM();}
+  else{VP.has(year)?VP.delete(year):VP.add(year);rfP();}
+}
+
+const STS=['SP','MT','GO','MS','RO','PA','MG','TO','PR','MA','RS','AC'];
+const SF={y24:[19244283,9661094,6815295,5862652,5968747,4181170,4788631,1634604,955770,1119545,593553,332435],y25:[20983555,12841145,8151069,8207040,6467813,7587869,4130984,2082854,1678668,1627765,923768,597578],y26:[21946476,17452664,8379333,9152787,8435063,5870783,4686307,2063798,2249136,1657549,1136613,648656]};
+const SK={y24:[8882693,6537393,4108982,3703409,3621150,2392821,2952306,1170667,556096,355783,318924,175442],y25:[8302635,7817976,4556275,4674818,3501008,3293890,2378304,1265485,777559,490272,667027,255854],y26:[8084165,9337970,4193628,4847046,3830680,2919063,2458297,1065847,890567,486838,624222,353580]};
+let stI=null,curSt='fob';
+function swSt(m,btn){curSt=m;document.querySelectorAll('.tbtn').forEach(b=>b.classList.toggle('on',b===btn));rfSt(m);}
+function rfSt(m){
+  const d=m==='fob'?SF:SK,fmt=m==='fob'?fM:fK;
+  if(stI)stI.destroy();
+  stI=new Chart(document.getElementById('cSt'),{type:'bar',data:{labels:STS,datasets:[
+    {label:'2024',data:d.y24,backgroundColor:AY.has(2024)?WINE:'transparent',borderRadius:5},
+    {label:'2025',data:d.y25,backgroundColor:AY.has(2025)?GRAY:'transparent',borderRadius:5},
+    {label:'2026',data:d.y26,backgroundColor:AY.has(2026)?INK:'transparent',borderRadius:5},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{title:([c])=>c.label+' — '+c.dataset.label,label:c=>' '+fmt(c.raw)}}},scales:{x:{...SC.x,ticks:{color:TC,font:{size:14},autoSkip:false,maxRotation:0}},y:{...SC.y,ticks:{color:TC,font:{size:13},callback:fmt}}}}});
+}
+
+const CD=[
+  {n:'Hong Kong',total:106558958,v24:37396961,v25:34767036,v26:34394961},
+  {n:'Costa do Marfim',total:14657046,v24:3189507,v25:5273943,v26:6193596},
+  {n:'Gana',total:12703683,v24:2799012,v25:5258088,v26:4646583},
+  {n:'Rússia',total:12243329,v24:1779255,v25:5686695,v26:4777379},
+  {n:'Laos',total:10682045,v24:2670544,v25:4876732,v26:3134769},
+  {n:'Congo R.D.',total:7980774,v24:2497832,v25:2350398,v26:3132544},
+  {n:'Vietnã',total:5587885,v24:160501,v25:465676,v26:4961708},
+  {n:'Egito',total:5204536,v24:1508482,v25:2419281,v26:1276773},
+  {n:'Congo',total:4843948,v24:1314548,v25:1499683,v26:2029717},
+  {n:'Peru',total:4830547,v24:1408482,v25:1181897,v26:2240168},
+  {n:'Mianmar',total:4254165,v24:27166,v25:1293974,v26:2933025},
+  {n:'Indonésia',total:3420985,v24:0,v25:0,v26:3420985},
+  {n:'Bangladesh',total:3204257,v24:0,v25:616025,v26:2588232},
+  {n:'Arábia Saudita',total:2790805,v24:581281,v25:1529765,v26:679759},
+  {n:'Argélia',total:2489322,v24:116463,v25:2372859,v26:0},
+];
+let selC=null;
+function sortC(key){
+  const vk=key==='total'?'total':key==='2024'?'v24':key==='2025'?'v25':'v26';
+  const sorted=[...CD].sort((a,b)=>b[vk]-a[vk]);
+  const mx=sorted[0][vk]||1;
+  const cl=document.getElementById('cList');cl.innerHTML='';
+  sorted.forEach((c,i)=>{
+    const val=c[vk],pct=(val/mx*100).toFixed(0);
+    const isSel=selC===c.n;
+    const shade=i<5?WINE:i<10?'#8B2A3E':GRAY;
+    const row=document.createElement('div');
+    row.className='cbr';
+    if(isSel)row.style.background='#F5E8EA';
+    row.innerHTML=`<span class="cbn">${c.n}</span><div class="cbt"><div class="cbf" style="width:${val?pct:0}%;background:${isSel?WINE:shade}"></div></div><span class="cbv">${val?'US$'+(val/1e6).toFixed(1)+'M':'—'}</span>`;
+    row.onclick=()=>{
+      selC=selC===c.n?null:c.n;
+      sortC(document.querySelector('.sort-sel').value);
+      const det=document.getElementById('cDet');
+      if(selC){
+        det.style.display='block';
+        det.innerHTML=`<div class="cdet-t">${c.n}</div>
+          <div class="cdet-r"><span class="cdet-l">2024</span><span class="cdet-v">${c.v24?'US$'+(c.v24/1e6).toFixed(1)+'M':'—'}</span></div>
+          <div class="cdet-r"><span class="cdet-l">2025</span><span class="cdet-v">${c.v25?'US$'+(c.v25/1e6).toFixed(1)+'M':'—'}</span></div>
+          <div class="cdet-r"><span class="cdet-l">2026</span><span class="cdet-v">${c.v26?'US$'+(c.v26/1e6).toFixed(1)+'M':'—'}</span></div>
+          <div class="cdet-r"><span class="cdet-l">Total acumulado</span><span class="cdet-v" style="color:var(--wine)">US$${(c.total/1e6).toFixed(1)}M</span></div>`;
+      } else {det.style.display='none';}
+    };
+    cl.appendChild(row);
+  });
+}
+
+const GD=[{n:'Mianmar',g:10701},{n:'Vietnã',g:2992},{n:'Bangladesh',g:320},{n:'Indonésia',g:320},{n:'Rússia',g:168},{n:'Costa Marfim',g:94},{n:'Mato Grosso',g:81},{n:'Laos',g:17},{n:'Hong Kong',g:-8},{n:'Egito',g:-15}];
+GD.sort((a,b)=>b.g-a.g);
+const capG=GD.map(d=>({...d,disp:Math.min(d.g,600)}));
+new Chart(document.getElementById('cGr'),{type:'bar',data:{labels:capG.map(d=>d.n),datasets:[{data:capG.map(d=>d.disp),backgroundColor:capG.map(d=>d.g>=0?WINE:GRAY),borderRadius:5}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:c=>{const r=GD[c.dataIndex].g;return' '+(r>600?'+'+r.toLocaleString('pt-BR'):r)+'%';}}}},scales:{x:{ticks:{color:TC,font:{size:12},callback:v=>v===600?'600%+':v+'%'},grid:{color:GC},border:{color:GC},max:650},y:{ticks:{color:TC,font:{size:14}},grid:{color:GC},border:{color:GC}}}}});
+
+bldM();bldP();rfSt('fob');sortC('total');updKPI();
+</script>
+</body>
+</html>
