@@ -52,6 +52,7 @@
 
 ## 🚀 Próximos Passos
 - Adicionar ao dashboard quais estados mais exportam
+- Adicionar o mapa mundi para melhor visualização dos países importadores
 - Adicionar ao dashboard quais os principais centros de escoamentos para essa carga
 - Ajustes de usabilidade  
 - Expansão de funcionalidades para próximo incremento  
